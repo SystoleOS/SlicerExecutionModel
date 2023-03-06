@@ -26,9 +26,12 @@
 #define MODULE_IMPORT
 #endif
 
+#include <itkFactoryRegistration.h>
+
 extern "C" MODULE_IMPORT int ModuleEntryPoint(int, char* []);
 
 int main(int argc, char** argv)
 {
+  itk::itkFactoryRegistration();
   return ModuleEntryPoint(argc, argv);
 }
